@@ -2,7 +2,7 @@
 import { Observable, Subject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
-import { Alert, AlertType } from '@app/utils/models';
+import { Alert, AlertType } from '../../utils/models';
 
 @Injectable({ providedIn: 'root' })
 export class AlertService {

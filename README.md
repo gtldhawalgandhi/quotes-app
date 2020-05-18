@@ -1,4 +1,4 @@
-# Prequisite
+# PreRequisite
 ###  1. `NodeJS 12.x`
 ###  2. `npx installed globally`
 
@@ -12,7 +12,7 @@
         yarn run start (npm run start)
 
 
-# Task
+# Assignment Task
 
 1. Play with the app and understand its functionality (More on that below)
 2. Understand the Angular code

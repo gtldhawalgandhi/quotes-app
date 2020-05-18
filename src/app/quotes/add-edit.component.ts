@@ -3,8 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { QuoteService, AccountService, AlertService } from '@app/utils/services';
-import { User } from '@app/utils/models';
+import { QuoteService, AccountService, AlertService } from '../utils/services';
+import { User } from '../utils/models';
 
 @Component({ templateUrl: 'add-edit.component.html' })
 export class AddEditComponent implements OnInit {

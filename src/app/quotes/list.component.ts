@@ -1,8 +1,8 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 
-import { QuoteService, AccountService } from '@app/utils/services';
-import { User, Quote, Role } from '@app/utils/models';
+import { QuoteService, AccountService } from '../utils/services';
+import { User, Quote, Role } from '../utils/models';
 
 @Component({ templateUrl: 'list.component.html' })
 export class ListComponent implements OnInit {
