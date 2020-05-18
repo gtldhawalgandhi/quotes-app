@@ -1,6 +1,7 @@
-# PreRequisite
+# Pre Requisite
 ###  1. `NodeJS 12.x`
 ###  2. `npx installed globally`
+###  3. `Understanding of Angular`
 
         yarn global add npx ( npm install -g npx)
        
@@ -28,15 +29,6 @@
 5. App must have proper logging enabled for both development and production
 6. App must not have any eslint errors/warnings (More on that below)
 
-# Quotes App
-
-1. Only registered users are allowed to use the app
-2. Only the owner can edit and delete their quotes
-3. Admin user can delete any quote and user
-4. There is exactly 1 admin user
-5. Admin user cannot delete itself
-6. While playing with the app set `fakeServer: true` inside `src/app/environments/environment.ts`
-7. While developing NodeJS app set `fakeServer: false` inside `src/app/environments/environment.ts`
 
 # Mandatory eslint rules
 
@@ -52,3 +44,24 @@
 8.  "prefer-object-spread": "warn"
 9.  "prefer-template": "warn"
 10. "semi": "warn"
+
+# Quotes App (NodeJS)
+
+1. Only registered users are allowed to use the app 
+2. Only the owner can edit and delete their quotes 
+3. Admin user can delete any quote and any user 
+4. There is exactly 1 admin user 
+5. Admin user cannot delete itself
+
+# Quotes App (Angular)
+
+1. While playing with the app, set `fakeServer: true` inside `src/app/environments/environment.ts`
+2. While developing NodeJS app, set `fakeServer: false` inside `src/app/environments/environment.ts`
+3. To begin with, in the demo app register a new admin user by settings `username` as **admin** & `password` as **admin123**.
+
+
+# IMPORTANT
+
+### This assignment is about NodeJS & MongoDB only. Angular app is for reference purpose only
+
+### But the end goal of the assignment is to make sure that the NodeJS app works perfectly alongside the angular app as expected
