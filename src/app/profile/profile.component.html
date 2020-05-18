@@ -1,0 +1,53 @@
+<div class="p-4">
+    <div class="container">
+        <span *ngIf="init" class="spinner-border mr-1"></span>
+
+        <form *ngIf="edit && !init" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="firstName">First Name</label>
+                    <input type="text" formControlName="firstName" class="form-control"
+                        [ngClass]="{ 'is-invalid': f.firstName.errors }" />
+                    <div *ngIf="f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" formControlName="lastName" class="form-control"
+                        [ngClass]="{ 'is-invalid': f.lastName.errors }" />
+                    <div *ngIf="f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="userName">Username</label>
+                    <input type="text" formControlName="userName" class="form-control"
+                        [ngClass]="{ 'is-invalid': f.userName.errors }" />
+                    <div *ngIf="f.userName.errors" class="invalid-feedback">
+                        <div *ngIf="f.userName.errors.required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label for="password">
+                        Password
+                        <em *ngIf="edit">(Optional)</em>
+                    </label>
+                    <input type="password" formControlName="password" class="form-control"
+                        [ngClass]="{ 'is-invalid': f.password.errors }" />
+                    <div *ngIf="f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading || !isValid" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

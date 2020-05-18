@@ -1,0 +1,23 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand nav nav-pills" *ngIf="user">
+    <a class="nav-item nav-link" routerLink="/quotes" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a class="nav-item nav-link" routerLink="/about" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">About</a>
+    <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active" *ngIf="isAdmin">Users</a>
+    <a routerLink="/profile" routerLinkActive="active" class="btn btn-outline-warning ml-2  mr-2"
+        type="submit">{{user.username}}</a>
+    <a class="btn btn-outline-success ml-2 my-2 my-sm-0" (click)="logout()">Logout</a>
+</nav>
+
+<!-- main app container -->
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+    <alert></alert>
+    <router-outlet></router-outlet>
+</div>
+<div class="text-center mt-4">
+    <p></p>
+    <p>
+        <a target=_blank href="https://github.com/gtldhawalgandhi/quotes-app">MEAN JS Training Practical Task Demo</a>
+    </p>
+</div>

@@ -1,0 +1,56 @@
+﻿<style>
+    .deepbutton {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 5px 5px;
+      font-size: 14px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: #fff;
+      background-color: rgb(235, 10, 205);
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px #999;
+    }
+    
+    .deepbutton:hover {background-color: #f78706}
+    
+    .deepbutton:active {
+      background-color: #e9cc6b;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    </style>
+<h1>Quotes</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Quote</a>
+<div class="card-columns">
+    <span *ngIf="!quotes">
+        <span class="spinner-border spinner-border-lg align-center"></span>
+    </span>
+    <div class="card" *ngFor="let quote of quotes">
+        <div class="card-body">
+            <!-- <h5 class="card-title">{{quote.quote}}</h5> -->
+            <p class="card-text mt-2">{{quote.quote}}</p>
+            <a routerLink="edit/{{quote.id}}" class="btn btn-primary mr-1" *ngIf="isPermitted(quote)">Edit</a>
+            <button  [disabled]="quote.id === currentQuoteId" (click)="deleteQuote(quote.id)" class="btn btn-danger  btn-delete-quote" *ngIf="isPermitted(quote)">
+                <span *ngIf="quote.id === currentQuoteId" class="spinner-border spinner-border-sm mr-1"></span>
+                Delete
+            </button>
+        </div>
+        <footer class="blockquote-footer">
+            <button (click)="updateQuoteLike(quote.id)" class="deepbutton" >
+                <svg  width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
+                </svg>
+                <small class="" *ngIf="quote.likes">
+                    <cite title="Source Title"> ({{quote.likes}})</cite>
+                </small>
+            </button>
+            <small class="text-muted">
+                {{quote.author}}
+            </small>            
+        </footer>
+    </div>
+</div>

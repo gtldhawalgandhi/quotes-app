@@ -1,0 +1,27 @@
+﻿<h1 *ngIf="isAddMode">Add Quote</h1>
+<h1 *ngIf="!isAddMode">Edit Quote</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group col">
+            <label for="quote">Quote</label>
+            <textarea rows="6" type="text" formControlName="quote" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.quote.errors }"></textarea>
+            <div *ngIf="submitted && f.quote.errors" class="invalid-feedback">
+                <div *ngIf="f.quote.errors.required">Quote is required</div>
+            </div>
+        </div>
+        <div class="form-group col">
+            <small class="mt-3"><label for="author">Author</label></small>
+            <input type="text" formControlName="author" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.author.errors }" />
+            <div *ngIf="submitted && f.author.errors" class="invalid-feedback">
+                <div *ngIf="f.author.errors.required">Author is required</div>
+            </div>
+        </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+        </button>
+        <a routerLink="/quotes" class="btn btn-link">Cancel</a>
+    </div>
+</form>
