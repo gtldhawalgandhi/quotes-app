@@ -12,8 +12,12 @@
 
         yarn run start (npm run start)
 
+# Run on Stackblitz
 
-# Assignment Task
+        https://stackblitz.com/github/gtldhawalgandhi/quotes-app
+
+
+# Assignment Task (2 weeks)
 
 1. Play with the app and understand its functionality (More on that below)
 2. Understand the Angular code
@@ -26,13 +30,17 @@
 2. Endpoints must be implemented using ExpressJS
 3. Must use ExpressJS middlewares when appropriate, to avoid repeatability in the code (DRY)
 4. Must use Mongoose and define proper schema to store data
-5. App must have proper logging enabled for both development and production
+5. App must have proper logging enabled for both development and production. Meaning less logging in production and more in development with the help of environment variables
 6. App must not have any eslint errors/warnings (More on that below)
+7. package.json must have "scripts" defined with appropriate commands
+8. Dependencies should be appropriately placed in package.json
+9. Classes, Methods & Functions should be documented using [JSDoc](https://jsdoc.app/howto-es2015-classes.html)
+10. At least one API endpoint must have test written using JEST and supertest by mocking MongoDB as well as any other library you think requires mocking. Goal of this test is to ensure that calling certain endpoint (ex: GET request) returns expected data
 
 
 # Mandatory eslint rules
 
-## The app must be configured to use these eslint rules
+## The NodeJS app must be configured to use these eslint rules
 
 1.  "no-console": "error
 2.  "require-atomic-updates": "error"
@@ -52,6 +60,7 @@
 3. Admin user can delete any quote and any user 
 4. There is exactly 1 admin user 
 5. Admin user cannot delete itself
+6. Build appropriate METHODs (GET, PUT, POST, DELETE)
 
 # Quotes App (Angular)
 
